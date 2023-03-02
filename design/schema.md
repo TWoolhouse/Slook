@@ -26,6 +26,7 @@ erDiagram
 		Thread thread
 		User owner
 		string content
+		datetime created
 	}
 
 	ThreadMessage {
