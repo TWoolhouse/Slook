@@ -1,8 +1,7 @@
 ```mermaid
 erDiagram
 
-	Thread ||--|{ ThreadMessage : message
-	Message ||--|{ ThreadMessage : thread
+	Message }|--|| Thread : message
 
 	User ||--|{ Message : owner
 	User ||--|{ ThreadViewer : viewer
@@ -27,11 +26,6 @@ erDiagram
 		User owner
 		string content
 		datetime created
-	}
-
-	ThreadMessage {
-		Thread thread
-		Message message
 	}
 
 	ThreadViewer {
