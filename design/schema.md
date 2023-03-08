@@ -8,7 +8,7 @@ erDiagram
 	Thread ||--|{ ThreadViewer : participant
 
 	User {
-		string uid
+		int uid
 		string email
 		string name
 		string password
@@ -16,7 +16,7 @@ erDiagram
 	}
 
 	Thread {
-		string uid
+		int uid
 		string name
 	}
 
