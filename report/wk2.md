@@ -54,15 +54,15 @@ As such, we will be processing these come the next sprint.
 
 # Tasks Completed Last Sprint
 
-| Task                                                                                |                                              Issue |  By |
-| :---------------------------------------------------------------------------------- | -------------------------------------------------: | --: |
-| Created the GCP VM and installed the PHP dependencies.^[<https://getcomposer.org/>] | [#1](https://github.com/TWoolhouse/Slook/issues/1) |  TW |
-| Decide the database ORM.                                                            | [#7](https://github.com/TWoolhouse/Slook/issues/7) | All |
-| Initialised the MySQL Database on GCP.                                              | [#2](https://github.com/TWoolhouse/Slook/issues/2) |  TW |
-| Decide the backend PHP library: [Fast Route](https://github.com/nikic/FastRoute).   | [#7](https://github.com/TWoolhouse/Slook/issues/7) |  TW |
-| Outlined the API routes needed for the text chat subsystem.                         | [#4](https://github.com/TWoolhouse/Slook/issues/4) |  TW |
-| Received answers to all our current questions (10/03/2023).                         |                                                    |     |
-| Designing possible frontend interfaces using Figma.                                 | [#6](https://github.com/TWoolhouse/Slook/issues/6) |  LT |
+| Task                                                                                |                                              Issue |   By |
+| :---------------------------------------------------------------------------------- | -------------------------------------------------: | ---: |
+| Created the GCP VM and installed the PHP dependencies.^[<https://getcomposer.org/>] | [#1](https://github.com/TWoolhouse/Slook/issues/1) |   TW |
+| Decide the database ORM.                                                            | [#7](https://github.com/TWoolhouse/Slook/issues/7) |  All |
+| Initialised the MySQL Database on GCP.                                              | [#2](https://github.com/TWoolhouse/Slook/issues/2) |   TW |
+| Decide the backend PHP library: [Fast Route](https://github.com/nikic/FastRoute).   | [#7](https://github.com/TWoolhouse/Slook/issues/7) |   TW |
+| Outlined the API routes needed for the text chat subsystem.                         | [#4](https://github.com/TWoolhouse/Slook/issues/4) |   TW |
+| Designing possible frontend interfaces using Figma.                                 | [#6](https://github.com/TWoolhouse/Slook/issues/6) |   LT |
+| Received answers to all our current questions (10/03/2023).                         |                                                    |      |
 
 # Challenges Encountered
 

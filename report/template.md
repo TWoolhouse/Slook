@@ -30,7 +30,7 @@ See: https://pandoc.org/
  -->
 
 \hrule
-\columnratio{0.65}
+\columnratio{0.6}
 \Begin{paracol}{2}
 
 # Overview
@@ -57,11 +57,11 @@ In vehicula diam pretium est porta, non feugiat orci tempor.
 
 # Tasks Completed Last Sprint
 
-| Task   |     By |
-| :----- | -----: |
-| Task 1 |     AZ |
-| Task 2 | AZ, AZ |
-| Task 3 |     AZ |
+| Task   |                                              Issue |     By |
+| :----- | -------------------------------------------------: | -----: |
+| Task 1 | [#0](https://github.com/TWoolhouse/Slook/issues/0) |     AZ |
+| Task 2 |                                                etc | AZ, AZ |
+| Task 3 |                                                etc |     AZ |
 
 # Challenges Encountered
 
