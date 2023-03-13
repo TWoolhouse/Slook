@@ -1,13 +1,6 @@
 ---
 title: Team 09 Report
 subtitle: Week \#2
-author:
-	- Frederick Hartgroves
-	- Avkaran Klair
-	- Arjun Parmar
-	- Alexander John Somper
-	- Louie Mcgregor Thomas
-	- Thomas Roger Woolhouse
 date: 13/03/2023
 numbersections: false
 documentclass: article
@@ -19,11 +12,15 @@ header-includes: |
 	\usepackage{multicol}
 	\usepackage{paracol}
 	\usepackage{blindtext}
+	\usepackage{titling}
 	\newcommand{\hideFromPandoc}[1]{#1}
 	\hideFromPandoc{
 		\let\Begin\begin
 		\let\End\end
 	}
+	\preauthor{}
+	\postauthor{}
+	\author{}
 	\setlength{\columnsep}{20pt}
 ---
 
@@ -33,7 +30,7 @@ See: https://pandoc.org/
  -->
 
 \hrule
-\columnratio{0.65}
+\columnratio{0.6}
 \Begin{paracol}{2}
 
 # Overview
@@ -49,20 +46,22 @@ In vehicula diam pretium est porta, non feugiat orci tempor.
 
 # Attendees
 
-- [x] Frederick Hartgroves
-- [ ] Avkaran Klair
-- [x] Arjun Parmar
-- [x] Alexander John Somper
-- [x] Louie Mcgregor Thomas
-- [x] Thomas Roger Woolhouse
+- [x] FH - Frederick Hartgroves
+- [ ] AK - Avkaran Klair
+- [x] AP - Arjun Parmar
+- [x] AS - Alexander John Somper
+- [x] LT - Louie Mcgregor Thomas
+- [x] TW - Thomas Roger Woolhouse
 
 \End{paracol}
 
 # Tasks Completed Last Sprint
 
-- Task 1
-- Task 2
-- Task 3
+| Task   |     By |
+| :----- | -----: |
+| Task 1 |     AZ |
+| Task 2 | AZ, AZ |
+| Task 3 |     AZ |
 
 # Challenges Encountered
 
