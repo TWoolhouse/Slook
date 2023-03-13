@@ -35,12 +35,9 @@ See: https://pandoc.org/
 
 # Overview
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-Aenean placerat purus sit amet felis facilisis malesuada.
-Aenean ligula ex, fringilla at arcu eget, vehicula lobortis felis.
-Nam fringilla risus eget leo maximus, nec elementum urna pellentesque.
-In maximus convallis finibus.
-In vehicula diam pretium est porta, non feugiat orci tempor.
+This week was focused on setting up the server and the framework of the backend.
+We also received answers to our questions on the forum, however, we had a response on the Friday (10/03/2023).
+As such, we will be processing these come the next sprint.
 
 \switchcolumn
 
@@ -57,23 +54,24 @@ In vehicula diam pretium est porta, non feugiat orci tempor.
 
 # Tasks Completed Last Sprint
 
-| Task   |     By |
-| :----- | -----: |
-| Task 1 |     AZ |
-| Task 2 | AZ, AZ |
-| Task 3 |     AZ |
+| Task                                                                                |                                              Issue |   By |
+| :---------------------------------------------------------------------------------- | -------------------------------------------------: | ---: |
+| Created the GCP VM and installed the PHP dependencies.^[<https://getcomposer.org/>] | [#1](https://github.com/TWoolhouse/Slook/issues/1) |   TW |
+| Decide the database ORM.                                                            | [#7](https://github.com/TWoolhouse/Slook/issues/7) |  All |
+| Initialised the MySQL Database on GCP.                                              | [#2](https://github.com/TWoolhouse/Slook/issues/2) |   TW |
+| Decide the backend PHP library: [Fast Route](https://github.com/nikic/FastRoute).   | [#7](https://github.com/TWoolhouse/Slook/issues/7) |   TW |
+| Outlined the API routes needed for the text chat subsystem.                         | [#4](https://github.com/TWoolhouse/Slook/issues/4) |   TW |
+| Received answers to all our current questions (10/03/2023).                         |                                                    |      |
 
 # Challenges Encountered
 
-- Challenge 1
-- Challenge 2
-- Challenge 3
+- The pre-installed version of PHP on the VM was not up-to-date. This had to be done manually.
 
 # Tasks for the Next Sprint
 
-| Task                                                                           | Priority |
-| :----------------------------------------------------------------------------- | -------: |
-| Really long and contrived example here to demonstrate the table looking decent |     High |
-| Task 1                                                                         |     High |
-| Task 2                                                                         |   Medium |
-| Task 3                                                                         |      Low |
+| Task                                                               | Priority |
+| :----------------------------------------------------------------- | -------: |
+| Formalise the requirements as given in the responses on the forum. |     High |
+| Finalise the Database Schema of the text chat.                     |     High |
+| Implement the text chat subsystem API routes.                      |   Medium |
+| Draft up the API routes for the data analysis subsystem.           |      Low |
