@@ -47,8 +47,8 @@ In vehicula diam pretium est porta, non feugiat orci tempor.
 # Attendees
 
 - [x] FH - Frederick Hartgroves
-- [x] AK - Avkaran Klair
-- [x] AP - Arjun Parmar
+- [ ] AK - Avkaran Klair
+- [ ] AP - Arjun Parmar (Interview)
 - [x] AS - Alexander John Somper
 - [x] LT - Louie Mcgregor Thomas
 - [x] TW - Thomas Roger Woolhouse
