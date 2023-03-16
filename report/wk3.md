@@ -1,7 +1,7 @@
 ---
 title: Team 09 Report
-subtitle: Week \#NUMBER
-date: DD/MM/2023
+subtitle: Week \#3
+date: 20/03/2023
 numbersections: false
 documentclass: article
 papersize: A4
@@ -9,9 +9,7 @@ fontsize: 11pt
 geometry: "left=1.5cm,right=1.5cm,top=0cm,bottom=1.5cm"
 links-as-notes: true
 header-includes: |
-	\usepackage{multicol}
 	\usepackage{paracol}
-	\usepackage{blindtext}
 	\usepackage{titling}
 	\newcommand{\hideFromPandoc}[1]{#1}
 	\hideFromPandoc{
@@ -25,7 +23,7 @@ header-includes: |
 ---
 
 <!-- Compile Instructions:
-pandoc .\report\wk1.md -o .\report\wk1.pdf
+pandoc .\report\wk3.md -o .\report\wk3.pdf
 See: https://pandoc.org/
  -->
 
@@ -33,7 +31,7 @@ See: https://pandoc.org/
 \columnratio{0.6}
 \Begin{paracol}{2}
 
-# Overview
+# Progress
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 Aenean placerat purus sit amet felis facilisis malesuada.
@@ -57,11 +55,13 @@ In vehicula diam pretium est porta, non feugiat orci tempor.
 
 # Tasks Completed Last Sprint
 
-| Task   |                                              Issue |     By |
-| :----- | -------------------------------------------------: | -----: |
-| Task 1 | [#0](https://github.com/TWoolhouse/Slook/issues/0) |     AZ |
-| Task 2 |                                                etc | AZ, AZ |
-| Task 3 |                                                etc |     AZ |
+| Task                        |                                              Issue |             By |
+| :-------------------------- | -------------------------------------------------: | -------------: |
+| Finalised Tech Stack        | [#7](https://github.com/TWoolhouse/Slook/issues/7) |     AP, AS, LT |
+| Database schema finalised.  | [#5](https://github.com/TWoolhouse/Slook/issues/5) | FH, AS, LT, TW |
+| Database uploaded on GCP.   | [#2](https://github.com/TWoolhouse/Slook/issues/2) |             TW |
+| Frontend Text Chat Designed | [#8](https://github.com/TWoolhouse/Slook/issues/8) |     AP, AS, LT |
+
 
 # Challenges Encountered
 
@@ -71,9 +71,9 @@ In vehicula diam pretium est porta, non feugiat orci tempor.
 
 # Tasks for the Next Sprint
 
-| Task                                                                           | Priority |
-| :----------------------------------------------------------------------------- | -------: |
-| Really long and contrived example here to demonstrate the table looking decent |     High |
-| Task 1                                                                         |     High |
-| Task 2                                                                         |   Medium |
-| Task 3                                                                         |      Low |
+| Task                                                                           |   By | Priority |
+| :----------------------------------------------------------------------------- | ---: | -------: |
+| Really long and contrived example here to demonstrate the table looking decent |   AZ |     High |
+| Task 1                                                                         |   AZ |     High |
+| Task 2                                                                         |   AZ |   Medium |
+| Task 3                                                                         |   AZ |      Low |

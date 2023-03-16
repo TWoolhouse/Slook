@@ -16,9 +16,7 @@ fontsize: 11pt
 geometry: "left=1.5cm,right=1.5cm,top=0cm,bottom=1.5cm"
 links-as-notes: true
 header-includes: |
-	\usepackage{multicol}
 	\usepackage{paracol}
-	\usepackage{blindtext}
 	\newcommand{\hideFromPandoc}[1]{#1}
 	\hideFromPandoc{
 		\let\Begin\begin

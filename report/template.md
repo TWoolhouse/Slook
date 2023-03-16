@@ -9,9 +9,7 @@ fontsize: 11pt
 geometry: "left=1.5cm,right=1.5cm,top=0cm,bottom=1.5cm"
 links-as-notes: true
 header-includes: |
-	\usepackage{multicol}
 	\usepackage{paracol}
-	\usepackage{blindtext}
 	\usepackage{titling}
 	\newcommand{\hideFromPandoc}[1]{#1}
 	\hideFromPandoc{
@@ -33,7 +31,7 @@ See: https://pandoc.org/
 \columnratio{0.6}
 \Begin{paracol}{2}
 
-# Overview
+# Progress
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 Aenean placerat purus sit amet felis facilisis malesuada.
@@ -71,9 +69,9 @@ In vehicula diam pretium est porta, non feugiat orci tempor.
 
 # Tasks for the Next Sprint
 
-| Task                                                                           | Priority |
-| :----------------------------------------------------------------------------- | -------: |
-| Really long and contrived example here to demonstrate the table looking decent |     High |
-| Task 1                                                                         |     High |
-| Task 2                                                                         |   Medium |
-| Task 3                                                                         |      Low |
+| Task                                                                           |   By | Priority |
+| :----------------------------------------------------------------------------- | ---: | -------: |
+| Really long and contrived example here to demonstrate the table looking decent |   AZ |     High |
+| Task 1                                                                         |   AZ |     High |
+| Task 2                                                                         |   AZ |   Medium |
+| Task 3                                                                         |   AZ |      Low |
