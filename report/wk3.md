@@ -33,8 +33,9 @@ See: https://pandoc.org/
 
 # Progress
 
-Acting on the answers we recieved to our questions on the forum, we discussed how we would set up the database for the data analytics subsystem.
-Additionally, we created a design for how the text chat subsystem will look.
+Week 3, we focused on processing the answers we received on the forum.
+From this, we discussed the design of the database as well as what the API routes for the data analysis system would look like.
+Additionally, we created the design for the text chat subsystem's frontend.
 
 \switchcolumn
 
@@ -51,23 +52,25 @@ Additionally, we created a design for how the text chat subsystem will look.
 
 # Tasks Completed Last Sprint
 
-| Task                        |                                              Issue |             By |
-| :-------------------------- | -------------------------------------------------: | -------------: |
-| Finalised Tech Stack        | [#7](https://github.com/TWoolhouse/Slook/issues/7) |     AP, AS, LT |
-| Database schema finalised.  | [#5](https://github.com/TWoolhouse/Slook/issues/5) | FH, AS, LT, TW |
-| Database uploaded on GCP.   | [#2](https://github.com/TWoolhouse/Slook/issues/2) |             TW |
-| Frontend Text Chat Designed | [#8](https://github.com/TWoolhouse/Slook/issues/8) |     AP, AS, LT |
+| Task                                 |                                                Issue |             By |
+| :----------------------------------- | ---------------------------------------------------: | -------------: |
+| Finalised complete Tech Stack.       |   [#7](https://github.com/TWoolhouse/Slook/issues/7) |     AP, AS, LT |
+| Database schema finalised.           |   [#5](https://github.com/TWoolhouse/Slook/issues/5) | FH, AS, LT, TW |
+| Database uploaded on GCP.            |   [#2](https://github.com/TWoolhouse/Slook/issues/2) |             TW |
+| Frontend Text Chat Designed.         |   [#8](https://github.com/TWoolhouse/Slook/issues/8) |     AP, AS, LT |
+| Fully implemented the text chat API. | [#11](https://github.com/TWoolhouse/Slook/issues/11) |             TW |
 
 # Challenges Encountered
 
 - We were initially unsure about the specific data that should be returned by the data analytics subsystem.
 - Had to define the scope of employee, team leader, and manager for data analytics.
+- The DB schema needed to be tweaked during the implementation of the chat API as it was missing a few key features.
 
 # Tasks for the Next Sprint
 
-| Task                                                                           |  By | Priority |
-| :----------------------------------------------------------------------------- | --: | -------: |
-| Really long and contrived example here to demonstrate the table looking decent |  AZ |     High |
-| Task 1                                                                         |  AZ |     High |
-| Create the frontend of the text chat subsystem using HTML, CSS and JavaScript  |  AS |   Medium |
-| Design a potential frontend interface for the Data Analytics showcase          |  LT |      Low |
+| Task                                                                 |  For | Priority |
+| :------------------------------------------------------------------- | ---: | -------: |
+| Create the frontend of the text chat subsystem using HTML, CSS & JS. |   AS |     High |
+| Find a suitable PHP library for graphing                             |   TW |     High |
+| Formalise the remaining API routes                                   |   TW |   Medium |
+| Design a the frontend for the Data Analytics subsystem.              |   LT |      Low |
