@@ -58,18 +58,16 @@ Additionally, we created a design for how the text chat subsystem will look.
 | Database uploaded on GCP.   | [#2](https://github.com/TWoolhouse/Slook/issues/2) |             TW |
 | Frontend Text Chat Designed | [#8](https://github.com/TWoolhouse/Slook/issues/8) |     AP, AS, LT |
 
-
 # Challenges Encountered
 
 - We were initially unsure about the specific data that should be returned by the data analytics subsystem.
 - Had to define the scope of employee, team leader, and manager for data analytics.
-- Challenge 3
 
 # Tasks for the Next Sprint
 
-| Task                                                                           |   By | Priority |
-| :----------------------------------------------------------------------------- | ---: | -------: |
-| Really long and contrived example here to demonstrate the table looking decent |   AZ |     High |
-| Task 1                                                                         |   AZ |     High |
-| Create the frontend of the text chat subsystem using HTML, CSS and JavaScript  |   AS |   Medium |
-| Task 3                                                                         |   AZ |      Low |
+| Task                                                                           |  By | Priority |
+| :----------------------------------------------------------------------------- | --: | -------: |
+| Really long and contrived example here to demonstrate the table looking decent |  AZ |     High |
+| Task 1                                                                         |  AZ |     High |
+| Create the frontend of the text chat subsystem using HTML, CSS and JavaScript  |  AS |   Medium |
+| Design a potential frontend interface for the Data Analytics showcase          |  LT |      Low |
