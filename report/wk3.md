@@ -33,12 +33,8 @@ See: https://pandoc.org/
 
 # Progress
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-Aenean placerat purus sit amet felis facilisis malesuada.
-Aenean ligula ex, fringilla at arcu eget, vehicula lobortis felis.
-Nam fringilla risus eget leo maximus, nec elementum urna pellentesque.
-In maximus convallis finibus.
-In vehicula diam pretium est porta, non feugiat orci tempor.
+Acting on the answers we recieved to our questions on the forum, we discussed how we would set up the database for the data analytics subsystem.
+Additionally, we created a design for how the text chat subsystem will look.
 
 \switchcolumn
 
@@ -65,8 +61,8 @@ In vehicula diam pretium est porta, non feugiat orci tempor.
 
 # Challenges Encountered
 
-- Challenge 1
-- Challenge 2
+- We were initially unsure about the specific data that should be returned by the data analytics subsystem.
+- Had to define the scope of employee, team leader, and manager for data analytics.
 - Challenge 3
 
 # Tasks for the Next Sprint
@@ -75,5 +71,5 @@ In vehicula diam pretium est porta, non feugiat orci tempor.
 | :----------------------------------------------------------------------------- | ---: | -------: |
 | Really long and contrived example here to demonstrate the table looking decent |   AZ |     High |
 | Task 1                                                                         |   AZ |     High |
-| Task 2                                                                         |   AZ |   Medium |
+| Create the frontend of the text chat subsystem using HTML, CSS and JavaScript  |   AS |   Medium |
 | Task 3                                                                         |   AZ |      Low |
