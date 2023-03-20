@@ -69,7 +69,7 @@ In vehicula diam pretium est porta, non feugiat orci tempor.
 
 # Tasks for the Next Sprint
 
-| Task                                                                           |   By | Priority |
+| Task                                                                           |  For | Priority |
 | :----------------------------------------------------------------------------- | ---: | -------: |
 | Really long and contrived example here to demonstrate the table looking decent |   AZ |     High |
 | Task 1                                                                         |   AZ |     High |
