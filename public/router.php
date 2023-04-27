@@ -10,5 +10,6 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
 
 	// Page
 	$r->addRoute("GET", "/login", "page/login");
+	$r->addRoute("GET", "/info", "page/info");
 });
 ?>
