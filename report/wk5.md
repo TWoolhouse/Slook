@@ -33,19 +33,15 @@ See: https://pandoc.org/
 
 # Progress
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-Aenean placerat purus sit amet felis facilisis malesuada.
-Aenean ligula ex, fringilla at arcu eget, vehicula lobortis felis.
-Nam fringilla risus eget leo maximus, nec elementum urna pellentesque.
-In maximus convallis finibus.
-In vehicula diam pretium est porta, non feugiat orci tempor.
+This weeks progress has given us a clean login page design allowing for the login page to be completed without any further design or discussion.
+The backend for the data analytics provides a framework allowing for dynamically switching between a server-side graph or the raw data based upon query parameters.
 
 \switchcolumn
 
 # Attendees
 
 - [x] FH - Frederick Hartgroves
-- [x] AK - Avkaran Klair
+- [ ] AK - Avkaran Klair
 - [x] AP - Arjun Parmar
 - [x] AS - Alexander John Somper
 - [x] LT - Louie Mcgregor Thomas
@@ -55,21 +51,20 @@ In vehicula diam pretium est porta, non feugiat orci tempor.
 
 # Tasks Completed Last Sprint
 
-| Task   |                                              Issue |     By |
-| :----- | -------------------------------------------------: | -----: |
-| Task 1 | [#0](https://github.com/TWoolhouse/Slook/issues/0) |     AZ |
-| Task 2 |                                                etc | AZ, AZ |
-| Task 3 |                                                etc |     AZ |
+| Task                                     |                                                Issue |   By |
+| :--------------------------------------- | ---------------------------------------------------: | ---: |
+| Integrated an image for optional graphs. | [#18](https://github.com/TWoolhouse/Slook/issues/18) |   TW |
+| Login page frontend design.              | [#15](https://github.com/TWoolhouse/Slook/issues/15) |   AP |
 
 # Challenges Encountered
 
-- Accessing the DB for logging in???
+- Accessing the DB for logging the user in.
 
 # Tasks for the Next Sprint
 
-| Task                                                                           |  For | Priority |
-| :----------------------------------------------------------------------------- | ---: | -------: |
-| Really long and contrived example here to demonstrate the table looking decent |   AZ |     High |
-| Task 1                                                                         |   AZ |     High |
-| Task 2                                                                         |   AZ |   Medium |
-| Task 3                                                                         |   AZ |      Low |
+| Task                                                        |    For | Priority |
+| :---------------------------------------------------------- | -----: | -------: |
+| Integrate the chat API into our frontend webpage.           |     AS |     High |
+| Implement data analytics API routes with the new framework. | LT, TW |     High |
+| Create the working login page.                              |     AP |   Medium |
+| Create the data analytics frontend HTML CSS.                |     FH |      Low |
