@@ -26,3 +26,12 @@ A interval-polling API using JSON for all body requests and responses. A cookie 
   - `:uid`: Thread[uid]
   - `others`: User[uid][]
   - **->** User[uid][] *- The users which have been added.*
+
+# Data Analysis System
+
+- Assigned Hours for user.
+- Number of tasks assigned.
+- Estimated Completion of task based on assignees & hours.
+- How many projects someone leads.
+- Average tasks completed within a timespan.
+- All user information.
