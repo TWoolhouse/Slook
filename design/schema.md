@@ -12,6 +12,8 @@ erDiagram
 	Task ||--|{ ProjectTasks : task
 	Project ||--|{ ProjectTasks : project
 
+	User ||--|{ Project : leader
+
 	User {
 		int uid
 		string email
