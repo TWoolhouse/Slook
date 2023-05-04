@@ -1,0 +1,52 @@
+body {
+	display: grid !important;
+	grid-template-columns: max-content 1fr;
+	grid-template-rows: max-content 1fr max-content;
+	align-items: end;
+	align-content: space-between;
+	max-height: 100vh;
+}
+
+aside {
+	grid-column: 1;
+	grid-row: 1 / span 3;
+}
+
+header,
+main,
+footer {
+	grid-column: 2;
+}
+
+h1 {
+	font-size: 0.7em;
+}
+
+aside {
+	min-height: 100vh;
+}
+
+header {}
+
+main {
+	/* background-color: #ffffff88; */
+	max-height: 100%;
+	overflow-y: scroll;
+}
+
+footer {}
+
+#thread_members {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+main {
+	display: flex;
+	flex-direction: column-reverse;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+}

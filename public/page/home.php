@@ -1,66 +1,88 @@
 <?php
-session_start();
+require_once("api/db.php");
+$db = db();
 ?>
 
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Home</title>
+	<title>Home</title>
+	<?php require_once("css"); ?>
+	<style>
+		body {
+			min-height: 100vh;
+			margin: 0;
+			display: flex;
+			flex-direction: column;
+			flex-wrap: nowrap;
+			justify-content: flex-start;
+			align-items: center;
+		}
 
+		body>* {
+			margin-top: 1rem;
+			margin-bottom: 1rem;
+		}
 
-<style>
-html {
-	background: linear-gradient(to bottom, #ad3da2, #337796);
-	font-family: "Segoe UI", sans-serif;
-}
-html, body{
-	height: 100%;
-	margin:0px;
-	
-}
+		#directory {
+			display: flex;
+			flex-direction: row;
+			position: relative;
+			align-items: center;
+			justify-content: space-around;
+			text-align: center;
+			width: 90%;
+		}
 
-#title{
-	font-size: 4em;
-	position: fixed;
-	top: 0;
-	left: 0.5em;
-	margin: 0px;
+		button {
+			width: 30%;
+			padding: 2.5rem 1rem;
+		}
 
-}
-.home{
-	display: flex;
-	flex-direction: row;
-	position: relative;
-	align-items: center;
-	justify-content: center;
-	text-align: center;
-	top: 50%;
+		select {
+			margin-top: 5rem;
+			padding: 1rem;
+		}
 
-}
-button{
-	width: 30%;
-	height: 10em;
-	display: inline-block;
-	
-}
-</style>
-
+	</style>
 </head>
 
-
-
 <body>
-<h1 id="title">Slook</h1>
-<div class="home">
-	<button id="textchat">Text Chat</button>
-	<button id="analytics">Data Analytics</button>
-</div>
-
-
-
+	<a id="slook" href="/home">Slook</a>
+	<select name="user" id="select_user" required>
+		<option value="">Select a User</option>
+		<?php
+			foreach (command($db, "SELECT uid, email FROM User")->fetchAll() as $user) {
+				echo "<option value=\"" . $user["uid"] . "\">" . $user["email"] . "</option>";
+			}
+		?>
+	</select>
+	<div id="directory">
+		<button id="textchat" href="/msg" disabled>Text Chat</button>
+		<button id="analytics" href="/home" disabled>Data Analytics</button>
+	</div>
 </body>
+
+<script>
+	window.history.replaceState(null, "", "/home");
+	document.getElementById("select_user").addEventListener("change", (event) => {
+		let select = event.target;
+		const enabled = !!select.value;
+		for (const btn of document.getElementById("directory").children) {
+			btn.toggleAttribute("disabled", !enabled);
+		}
+		const expires = 60 * 60;
+		if (enabled) {
+			console.log("Login:", select.value);
+			document.cookie = `uid=${select.value}; max-age=${expires}; path=/`;
+		}
+	})
+	for (const btn of document.getElementById("directory").children) {
+		btn.addEventListener("click", () => {
+			window.location.href = btn.getAttribute("href");
+		})
+	}
+</script>
+
 </html>
-
-
-
-
