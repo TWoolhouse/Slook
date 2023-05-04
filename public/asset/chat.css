@@ -1,3 +1,7 @@
+#slook {
+	margin-left: 0;
+}
+
 body {
 	display: grid !important;
 	grid-template-columns: max-content 1fr;
@@ -10,7 +14,13 @@ body {
 aside {
 	grid-column: 1;
 	grid-row: 1 / span 3;
+	margin: 0 1rem;
+	min-height: 100vh;
+	padding-right: 1rem;
+	border-right: 2px solid red;
 }
+
+main {}
 
 header,
 main,
@@ -20,10 +30,6 @@ footer {
 
 h1 {
 	font-size: 0.7em;
-}
-
-aside {
-	min-height: 100vh;
 }
 
 header {}
@@ -36,12 +42,6 @@ main {
 
 footer {}
 
-#thread_members {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: flex-start;
-}
 
 main {
 	display: flex;
@@ -49,4 +49,83 @@ main {
 	flex-wrap: nowrap;
 	justify-content: flex-start;
 	align-items: flex-start;
+	margin-top: 1rem;
+}
+
+#select_thread {
+	font-size: 1.2em;
+	padding: 0.2rem 0.5rem;
+}
+
+#thread_members {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	/* margin-top: 1rem; */
+	/* border-top: 2px solid red; */
+}
+
+.member {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: space-between;
+	margin: 1rem;
+	margin-bottom: 0.1rem;
+}
+
+.member img {
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+#form_send {
+	margin: 1rem 0;
+	font-size: 1.5em;
+	display: grid;
+	grid-template-columns: 1fr max-content;
+}
+
+#form_send>* {
+	font-size: 1em;
+	padding: 0.3em 0.5em;
+}
+
+#form_send input {
+	border-radius: 1rem;
+	border-style: solid;
+}
+
+#form_send button {
+	margin: 0 1rem;
+}
+
+.msg {
+	display: grid;
+	align-items: center;
+	justify-content: start;
+	align-content: center;
+	justify-items: start;
+
+	grid-template-columns: max-content 1fr;
+	grid-template-rows: auto auto;
+	padding: 0.2rem 1rem;
+	margin: 0.2rem;
+
+	border-radius: 1rem;
+	background-color: #ffffff22;
+
+}
+
+.msg img.pfp {
+	border-radius: 100%;
+	grid-row: 1 / 3;
+	font-size: 1.5em;
+	margin-right: 1rem;
+}
+
+.msg .c {
+	font-size: 1.5em;
 }
