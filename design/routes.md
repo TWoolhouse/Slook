@@ -40,10 +40,10 @@ A interval-polling API using JSON for all body requests and responses. A cookie 
   - `[$displayProjects]` : boolean _- If true, API will return amount of tasks from each project as well. Defaults to false._
   - **->** ???
 
-- **GET** `/data/:uid/projectsLed/?[details=$details]` -> Retreives the number of projects led by that user
+- **GET** `/data/:uid/projectsLed/?[showDetails=$showDetails]` -> Retreives the number of projects led by that user
 
   - `:uid` : User[uid]
-  - `[$details]` : boolean _- If true, API will return each project details also. Defaults to false._
+  - `[$showDetails]` : boolean _- If true, API will return each project details also. Defaults to false._
   - **->** ???
 
 - **GET** `/data/:uid/productivity/?[timespan=$timespan]` -> Retreives the average tasks completed within `$timespan`
@@ -52,7 +52,7 @@ A interval-polling API using JSON for all body requests and responses. A cookie 
   - `[$timespan]` : integer _- Measured in days. If not specified, defaults to 7._
   - **->** ???
 
-- **GET** `/data/:uid/hoursAssigned/` -> Retrieves the currently assigned hours for the user
+- **GET** `/data/:uid/hoursAssigned/?[displayProjects=$displayProjects]` -> Retrieves the currently assigned hours for the user
 
   - `:uid` : User[uid]
   - **->** ???

@@ -5,7 +5,7 @@ function entry_point($uid) {
 	$db = db();
 	$user = user();
 
-	$showDetails = $_GET['showDetails'] ?? false;
+	$displayProjects = $_GET['displayProjects'] ?? false;
 
     $result = command($db, "SELECT COUNT(user) AS 'amountOverall'
     FROM TaskUser
@@ -13,7 +13,7 @@ function entry_point($uid) {
 		bind(1, $uid, PDO::PARAM_STR)
 	])->fetch();
 
-    if ($showDetails) {
+    if ($displayProjects) {
         $projectShares = command($db, "SELECT ProjectTask.project AS 'projectUID', Project.name AS 'projectName', COUNT(ProjectTask.project) AS 'amountAssigned'
         FROM (`TaskUser` INNER JOIN `ProjectTask` ON ProjectTask.task = TaskUser.task) INNER JOIN `Project` ON Project.uid = ProjectTask.project
         WHERE TaskUser.user = ?
