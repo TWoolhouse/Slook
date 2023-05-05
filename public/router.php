@@ -9,7 +9,7 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
 	$r->addRoute("POST", "/chat/{uid:\d+}/invite", "chat/invite");
 
 	//Data Analytics API
-	$r->addRoute("GET", "/data", "data/"); //All user info
+	$r->addRoute("GET", "/data", "data/userInfo"); //All user info
 	$r->addRoute("GET", "/data/{uid:\d+}/tasksAssigned", "data/"); //Number of Tasks Assigned
 	$r->addRoute("GET", "/data/{uid:\d+}/projectsLed", "data/"); //Numbers of Projects Lead
 	$r->addRoute("GET", "/data/{uid:\d+}/productivity", "data/"); //Avg tasks completed within timespan

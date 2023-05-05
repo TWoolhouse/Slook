@@ -57,3 +57,17 @@ CREATE TABLE TaskUser (
 	FOREIGN KEY (user) REFERENCES User(uid) ON DELETE CASCADE ON UPDATE CASCADE
 	FOREIGN KEY (task) REFERENCES Task(uid) ON DELETE CASCADE ON UPDATE CASCADE
 );
+
+/*INSERTING DATA INTO DB*/
+
+INSERT INTO `User` (email, name, password, role) VALUES ("louiemthomas02@gmail.com", "Louie Thomas", "SecurePassword123", 1);
+
+INSERT INTO `User` (email, name, password, role) VALUES ("adalovelace1@make-it-all.com", "Ada Lovelace", "LaceLover01", 3);
+
+INSERT INTO `User` (email, name, password, role) VALUES ("bertthebuilder@make-it-all.com", "Bert Smith", "BertieIsTheBest1!", 2);
+
+INSERT INTO `User` (email, name, password, role) VALUES ("clarajohnson01@make-it-all.com", "Clara Johnson", "MeEncantaEspana2006", 2);
+
+INSERT INTO `User` (email, name, password, role) VALUES ("dilip-the-dodo@make-it-all.com", "Dilip Schmidt", "IAmNotADodo123", 1);
+
+INSERT INTO `User` (email, name, password, role) VALUES ("emilysgarn1996@make-it-all.com", "Emily Garn", "EmmaStone2006", 3);
