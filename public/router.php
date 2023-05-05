@@ -14,7 +14,7 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
 	$r->addRoute("GET", "/data/{uid:\d+}/projectsLed", "data/projectsLed"); //Numbers of Projects Lead
 	$r->addRoute("GET", "/data/{uid:\d+}/productivity", "data/"); //Avg tasks completed within timespan
 	$r->addRoute("GET", "/data/{uid:\d+}/hoursAssigned", "data/"); //Assigned Hours for user
-	$r->addRoute("GET", "/data/estimatedCompletionTime", "data/"); //Estimate Completion of Task based on assignees & hours.
+	$r->addRoute("GET", "/data/estimatedCompletionTime", "data/taskETC"); //Estimate Completion of Task based on assignees & hours.
 
 	// Pages
 	$r->addRoute("GET", "/info", "page/info"); // dev
