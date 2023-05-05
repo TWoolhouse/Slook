@@ -37,10 +37,11 @@ CREATE TABLE Project (
 
 CREATE TABLE Task (
 	uid INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(60) NOT NULL,
 	wokerhours INT UNSIGNED,
 	created DATETIME DEFAULT CURRENT_TIMESTAMP,
-	started DATETIME DEFAULT CURRENT_TIMESTAMP,
-	completed DATETIME DEFAULT CURRENT_TIMESTAMP,
+	started DATETIME,
+	completed DATETIME
 );
 
 CREATE TABLE ProjectTask (
@@ -58,7 +59,7 @@ CREATE TABLE TaskUser (
 	FOREIGN KEY (task) REFERENCES Task(uid) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
-/*INSERTING DATA INTO DB*/
+/*INSERTING DATA INTO DB FOR DATA ANALYTICS*/
 
 INSERT INTO `User` (email, name, password, role) VALUES ("louiemthomas02@gmail.com", "Louie Thomas", "SecurePassword123", 1);
 
@@ -71,3 +72,24 @@ INSERT INTO `User` (email, name, password, role) VALUES ("clarajohnson01@make-it
 INSERT INTO `User` (email, name, password, role) VALUES ("dilip-the-dodo@make-it-all.com", "Dilip Schmidt", "IAmNotADodo123", 1);
 
 INSERT INTO `User` (email, name, password, role) VALUES ("emilysgarn1996@make-it-all.com", "Emily Garn", "EmmaStone2006", 3);
+
+INSERT INTO `Project` (name, leader) VALUES ("Spring Cleaning", 1);
+
+INSERT INTO `Project` (name, leader) VALUES ("Destroying the One Ring", 3);
+
+INSERT INTO `Task` (wokerhours, name) VALUES (4368, "Walking to Mordor");
+
+INSERT INTO `Task` (wokerhours, name) VALUES (192, "Attend the Council of Elrond");
+
+INSERT INTO `Task` (wokerhours, name) VALUES (432, "Pass through the Mines of Moria");
+
+INSERT INTO `Task` (wokerhours, name) VALUES (2, "Tidy up Room");
+
+INSERT INTO `Task` (wokerhours, name) VALUES (1, "Go down to the Tip");
+
+INSERT INTO `Task` (wokerhours, name) VALUES (2, "Vacuum House");
+
+INSERT INTO `ProjectTask` VALUES (1, 2), (2, 2), (3, 2);
+INSERT INTO `ProjectTask` VALUES (4, 1), (5, 1), (6, 1);
+
+INSERT INTO `TaskUser` VALUES (2,3) , (4,3) , (4,1) , (2,6) , (3,2) , (1,5) , (3,1) , (3,1);
