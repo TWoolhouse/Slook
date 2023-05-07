@@ -46,7 +46,7 @@ A interval-polling API using JSON for all body requests and responses. A cookie 
   - `[$showDetails]` : boolean _- If true, API will return each project details also. Defaults to false._
   - **->** ???
 
-- **GET** `/data/:uid/productivity/?[timespan=$timespan]` -> Retreives the average tasks completed within `$timespan`
+- **GET** `/data/:uid/productivity/?[timespan=$timespan]` -> Retreives the average tasks per day completed within `$timespan`
 
   - `:uid` : User[uid]
   - `[$timespan]` : integer _- Measured in days. If not specified, defaults to 7._

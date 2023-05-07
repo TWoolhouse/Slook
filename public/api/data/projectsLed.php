@@ -6,7 +6,7 @@ function entry_point($uid) {
     $db = db();
 	$user = user();
 
-	$showDetails = $_GET['details'] ?? false;
+	$showDetails = $_GET['showDetails'] ?? false;
 
     $result = command($db, "SELECT COUNT(uid) AS 'amountOfProjectsLed'
     FROM Project
