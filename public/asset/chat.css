@@ -2,6 +2,24 @@
 	margin-left: 0;
 }
 
+
+/*Scrollbar styling*/
+::-webkit-scrollbar {
+	width: 10px;
+}
+  
+::-webkit-scrollbar-track {
+	background: #ddd;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #999; 
+}
+  
+::-webkit-scrollbar-thumb:hover {
+	background: #555; 
+}
+
 body {
 	display: grid !important;
 	grid-template-columns: max-content 1fr;
@@ -14,33 +32,38 @@ body {
 aside {
 	grid-column: 1;
 	grid-row: 1 / span 3;
-	margin: 0 1rem;
 	min-height: 100vh;
-	padding-right: 1rem;
-	border-right: 2px solid red;
+	background-image: linear-gradient(to left, #ad3da2, #337796);
+	border-right: 0.25vw solid #220044;
 }
-
-main {}
 
 header,
 main,
 footer {
 	grid-column: 2;
+	background-image: linear-gradient(to right, #ad3da2, #337796);
 }
 
 h1 {
 	font-size: 0.7em;
 }
 
-header {}
+header {
+	border-bottom: 0.5vh solid #220044;
+}
 
 main {
 	/* background-color: #ffffff88; */
 	max-height: 100%;
-	overflow-y: scroll;
+	height: 100%;
+	width: 100%;
+	overflow-y: auto;
+	background-image: linear-gradient(to right, #750f6b, #0d5d83);
 }
 
-footer {}
+footer {
+	border-top: 0.5vh solid #220044;
+}
 
 
 main {
