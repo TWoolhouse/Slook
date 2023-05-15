@@ -34,7 +34,7 @@ function entry_point($uid) {
 		AND Task.uid = ProjectTask.task
 		AND ProjectTask.project = Project.uid
 		AND TaskUser.user = ?
-		GROUP BY Project.name" , [
+		GROUP BY Project.uid" , [
 			bind(1, $uid, PDO::PARAM_STR)
 		])->fetchall();
 

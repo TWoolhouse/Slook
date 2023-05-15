@@ -26,7 +26,7 @@ function entry_point($uid) {
 	];
 
 	if ($showUsers) {
-		$users = command($db, "SELECT user.uid, user.name, user.email
+		$users = command($db, "SELECT User.uid, User.name, User.email
 		FROM TaskUser INNER JOIN User ON TaskUser.user = User.uid
 		WHERE task = ?", [
 			bind(1, $uid, PDO::PARAM_INT),
