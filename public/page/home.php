@@ -60,7 +60,8 @@ $db = db();
 	</select>
 	<div id="directory">
 		<button id="textchat" href="/msg" disabled>Text Chat</button>
-		<button id="analytics" href="/home" disabled>Data Analytics</button>
+		<button id="analytics" href="/analytics" disabled>Data Analytics</button>
+		<!-- <button id="textchat_api" href="/message" disabled>Text Chat API</button> -->
 	</div>
 </body>
 
@@ -72,7 +73,7 @@ $db = db();
 		for (const btn of document.getElementById("directory").children) {
 			btn.toggleAttribute("disabled", !enabled);
 		}
-		const expires = 60 * 60;
+		const expires = 60 * 60 * 24;
 		if (enabled) {
 			console.log("Login:", select.value);
 			document.cookie = `uid=${select.value}; max-age=${expires}; path=/`;
