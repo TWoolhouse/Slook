@@ -38,7 +38,7 @@ CREATE TABLE Project (
 CREATE TABLE Task (
 	uid INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 	name VARCHAR(60) NOT NULL,
-	wokerhours INT UNSIGNED,
+	workerhours INT UNSIGNED,
 	created DATETIME DEFAULT CURRENT_TIMESTAMP,
 	started DATETIME,
 	completed DATETIME
@@ -79,19 +79,19 @@ INSERT INTO `Project` (name, leader) VALUES ("Spring Cleaning", 1);
 
 INSERT INTO `Project` (name, leader) VALUES ("Destroying the One Ring", 3);
 
-INSERT INTO `Task` (wokerhours, name) VALUES (4368, "Walking to Mordor");
+INSERT INTO `Task` (workerhours, name) VALUES (4368, "Walking to Mordor");
 
-INSERT INTO `Task` (wokerhours, name) VALUES (192, "Attend the Council of Elrond");
+INSERT INTO `Task` (workerhours, name) VALUES (192, "Attend the Council of Elrond");
 
-INSERT INTO `Task` (wokerhours, name) VALUES (432, "Pass through the Mines of Moria");
+INSERT INTO `Task` (workerhours, name) VALUES (432, "Pass through the Mines of Moria");
 
-INSERT INTO `Task` (wokerhours, name) VALUES (2, "Tidy up Room");
+INSERT INTO `Task` (workerhours, name) VALUES (2, "Tidy up Room");
 
-INSERT INTO `Task` (wokerhours, name) VALUES (1, "Go down to the Tip");
+INSERT INTO `Task` (workerhours, name) VALUES (1, "Go down to the Tip");
 
-INSERT INTO `Task` (wokerhours, name) VALUES (2, "Vacuum House");
+INSERT INTO `Task` (workerhours, name) VALUES (2, "Vacuum House");
 
 INSERT INTO `ProjectTask` VALUES (1, 2), (2, 2), (3, 2);
 INSERT INTO `ProjectTask` VALUES (4, 1), (5, 1), (6, 1);
 
-INSERT INTO `TaskUser` VALUES (2,3) , (4,3) , (4,1) , (2,6) , (3,2) , (1,5) , (3,1) , (3,1);
+INSERT INTO `TaskUser` VALUES (2,3) , (4,3) , (4,1) , (2,6) , (3,2) , (1,5) , (3,1);
