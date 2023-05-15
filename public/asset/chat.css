@@ -1,23 +1,18 @@
-#slook {
-	margin-left: 0;
-}
-
-
 /*Scrollbar styling*/
 ::-webkit-scrollbar {
 	width: 10px;
 }
-  
+
 ::-webkit-scrollbar-track {
 	background: #ddd;
 }
 
 ::-webkit-scrollbar-thumb {
-	background: #999; 
+	background: #999;
 }
-  
+
 ::-webkit-scrollbar-thumb:hover {
-	background: #555; 
+	background: #555;
 }
 
 body {
@@ -31,10 +26,21 @@ body {
 
 aside {
 	grid-column: 1;
+	min-width: 20ch;
 	grid-row: 1 / span 3;
 	min-height: 100vh;
 	background-image: linear-gradient(to left, #ad3da2, #337796);
 	border-right: 0.25vw solid #220044;
+}
+
+aside>* {
+	margin-left: 0.5rem;
+	margin-right: 0.5rem;
+}
+
+footer form input,
+header>* {
+	margin-left: 1rem;
 }
 
 header,
@@ -46,10 +52,15 @@ footer {
 
 h1 {
 	font-size: 0.7em;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 header {
 	border-bottom: 0.5vh solid #220044;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 main {
@@ -78,6 +89,7 @@ main {
 #select_thread {
 	font-size: 1.2em;
 	padding: 0.2rem 0.5rem;
+	width: 90%;
 }
 
 #thread_members {
@@ -151,4 +163,43 @@ main {
 
 .msg .c {
 	font-size: 1.5em;
+}
+
+.hidden {
+	display: none;
+}
+
+dialog .head {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	margin-bottom: 1rem;
+}
+
+dialog .head h1 {
+	font-size: 1.25em;
+}
+
+dialog[open] {
+	width: 80%;
+	max-width: 50ch;
+	padding: 1rem;
+}
+
+dialog form {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	align-items: center;
+	row-gap: 1rem;
+}
+
+header div {
+	margin-right: 1rem;
+}
+
+header div button {
+	margin-left: 1rem;
+	font-size: 1em;
+	padding: 0.3em 0.5em;
 }

@@ -28,13 +28,14 @@ async function threads() {
 	ui_threads.children.length = 0;
 	if (!empty.value)
 		ui_threads.appendChild(empty);
-	for (const thread of r) {
-		const ui_option = HTMLasDOM(/* HTML */ `<option value="${thread.uid}">${thread.name}</option>`);
+	for (let thread of r) {
+		let ui_option = HTMLasDOM(/* HTML */ `<option value="${thread.uid}">${thread.name}</option>`);
 		ui_threads.appendChild(ui_option);
 		ui_threads.addEventListener("change", () => {
 			const empty = ui_threads.firstChild;
 			if (!empty.value) empty.remove();
-			thread_load(thread.uid)
+			if (ui_threads.value == thread.uid)
+				thread_load(thread.uid)
 		})
 	}
 }
@@ -45,7 +46,9 @@ async function threads() {
  */
 async function thread_load(uid) {
 	const ui_send_button = document.getElementById("btn_send");
-	ui_send_button.setAttribute("disabled", null);
+	const ui_buttons = [ui_send_button, document.getElementById("thread_add_dialog")]
+	for (const ui_btn of ui_buttons)
+		ui_btn.setAttribute("disabled", null);
 	clearTimeout(LOOP_HANDLE)
 
 	let r = await (await fetch(`/chat/${uid}`)).json();
@@ -71,15 +74,16 @@ async function thread_load(uid) {
 		const ui_chats = document.getElementById("chatbox");
 
 		let r = await (await fetch(`/chat/${uid}/message?limit=20`)).json();
-		ui_chats.innerHTML = null;
+		ui_chats.innerHTML = "";
 		for (const msg of r) {
 			const ui_chat = HTMLasDOM(HTML_chat(msg));
 			ui_chats.append(ui_chat);
 		}
-		CURSOR = r[0].uid;
+		CURSOR = r.length > 0 ? r[0].uid : 0;
 	}
 
-	ui_send_button.removeAttribute("disabled");
+	for (const ui_btn of ui_buttons)
+		ui_btn.removeAttribute("disabled");
 	receiver();
 }
 
@@ -126,6 +130,106 @@ function sender() {
 	})
 }
 
+function instansiate_dialog() {
+	ui_body = document.querySelector("body")
+	for (const dialog of [dialog_create(), dialog_add()]) {
+		dialog.querySelector(".head button").addEventListener("click", () => {
+			dialog.close()
+		})
+		ui_body.appendChild(dialog)
+	}
+}
+
+function dialog_create() {
+	let dialog = HTMLasDOM(HTML_dialog_create())
+
+	let user_list = []
+	let ui_picker = dialog.querySelector(".picker")
+	let ui_select = ui_picker.querySelector("select")
+	let ui_form = dialog.querySelector("form.submit")
+	let ui_selected = ui_form.querySelector(".selected")
+
+	document.getElementById("thread_create_dialog").addEventListener("click", () => {
+		dialog.showModal()
+		for (const opt of ui_select.querySelectorAll("option")) {
+			opt.classList.remove("hidden")
+		}
+		ui_selected.children.length = 0;
+		ui_form.reset()
+	})
+
+	ui_picker.querySelector("button").addEventListener("click", event => {
+		let user_uid = ui_select.value
+		ui_select.value = ""
+		user_list.push(user_uid)
+		for (const opt of ui_select.querySelectorAll("option")) {
+			if (opt.value == user_uid) {
+				opt.classList.add("hidden")
+				break
+			}
+		}
+		ui_selected.appendChild(HTMLasDOM(HTML_member(USERS.find(u => u.uid == user_uid))))
+	})
+
+	ui_form.addEventListener("submit", event => {
+		dialog.close();
+		event.preventDefault()
+		let uuids = [...user_list.map(uid => +uid)]
+		let name = ui_form.querySelector("input").value
+		user_list.length = 0;
+		(async () => {
+			console.log(name, uuids);
+			await fetch("/chat/create", {
+				method: "POST",
+				body: JSON.stringify({
+					name: name,
+					with: uuids,
+				})
+			})
+			threads()
+		})()
+		return false
+	})
+	return dialog
+}
+
+function dialog_add() {
+	let dialog = HTMLasDOM(HTML_dialog_add())
+	let ui_form = dialog.querySelector("form")
+	let ui_select = dialog.querySelector("select")
+
+	document.getElementById("thread_add_dialog").addEventListener("click", () => {
+		dialog.showModal()
+		for (const opt of ui_select.querySelectorAll("option")) {
+			opt.classList.remove("hidden")
+			if (MEMBER_LIST.findIndex(u => opt.value == u.uid) != -1) {
+				opt.classList.add("hidden")
+			}
+		}
+		ui_select.value = ""
+		ui_form.reset()
+	})
+
+	ui_form.addEventListener("submit", event => {
+		event.preventDefault()
+		dialog.close()
+		let thread = THREAD
+		let uid = ui_select.value;
+		(async () => {
+			await fetch(`/chat/${THREAD}/invite`, {
+				method: "POST",
+				body: JSON.stringify({
+					others: [+uid]
+				})
+			})
+			thread_load(thread)
+		})()
+		return false
+	})
+
+	return dialog
+}
+
 function HTML_chat(msg) {
 	let owner = MEMBER_LIST.find(u => u.uid === msg.owner);
 	let date = new Date(msg.created).toLocaleDateString(undefined, {
@@ -152,6 +256,10 @@ function avatar(user, size = 32) {
 	return `https://ui-avatars.com/api/?name=${name}&background=random&size=${size}&format=svg"`;
 }
 
+function HTML_avatar(user, size = 32) {
+	return /* HTML */ `<img src="${avatar(user, size)}" width="${size}" height="${size}">`
+}
+
 function HTML_member(user) {
 	const name = encodeURIComponent(user.name ?? user.email ?? "User");
 	return /* HTML */ `
@@ -162,5 +270,49 @@ function HTML_member(user) {
 	`;
 }
 
+function HTML_dialog_create() {
+	let ui_opts_user = Array.from(USERS.map(user => /* HTML */`<option value="${user.uid}">${user.name ?? user.email ?? user.uid}</option>`)).join("\n")
+	return /* HTML */ `
+	<dialog>
+		<div class="head">
+			<h1>Create a new Chat</h1>
+			<button type="button">X</button>
+		</div>
+		<form class="submit">
+			<label for="form_create_thread_name">Chat Name</label>
+			<input type="text" name="name" id="form_create_thread_name" required>
+			<div class="picker">
+				<select>
+					<option value="">Select a User...</option>
+					${ui_opts_user}
+				</select>
+				<button type="button">+</button>
+			</div>
+			<div class="selected"></div>
+			<button type="submit">Create</button>
+		</form>
+	</dialog>`
+}
+
+function HTML_dialog_add() {
+	let ui_opts_user = Array.from(USERS.map(user => /* HTML */`<option value="${user.uid}">${user.name ?? user.email ?? user.uid}</option>`)).join("\n")
+	return /* HTML */ `
+	<dialog>
+		<div class="head">
+			<h1>Create a new Chat</h1>
+			<button type="button">X</button>
+		</div>
+		<form class="picker">
+			<select required>
+				<option value="">Select a User...</option>
+				${ui_opts_user}
+			</select>
+			<button type="submit">+</button>
+		</form>
+	</dialog>
+	`
+}
+
+instansiate_dialog();
 threads();
 sender();
