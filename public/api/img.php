@@ -7,16 +7,17 @@ function extract_override() {
 	];
 }
 
-function gfig($title, $xlabel, $ylabel, ...$plots) {
+function gfig($title, $xlabel, $ylabel, $legend, ...$plots) {
 	return [
 		"title" => $title,
 		"xlabel" => $xlabel,
 		"ylabel" => $ylabel,
+		"legend" => $legend,
 		"plots" => $plots,
 	];
 }
 
-function gplot($x, $y, string $label, $type, $marker) {
+function gplot($x, $y, $label, $type, $marker) {
 	$cfg = ["type" => $type ?? "-"];
 	if ($label !== null) {
 		$cfg["label"] = $label;
@@ -25,6 +26,10 @@ function gplot($x, $y, string $label, $type, $marker) {
 		$cfg["marker"] = $marker;
 	}
 	return [$x, $y, $cfg];
+}
+
+function ging() {
+	return isset($_GET["img"]) || isset($_GET["imgr"]);
 }
 
 function gprocess($data) {
@@ -47,17 +52,16 @@ function gprocess($data) {
 
 		foreach (["title", "xlabel", "ylabel"] as $_ => $key) {
 			$c = $cfg[$key];
-			if ($c !== null) {
-				call_user_func([$graph, $key], $c ? $c : $data[$key]);
-			}
+			call_user_func([$graph, $key], $c != null ? $c : $data[$key]);
 		}
-		$graph->legend();
+		if ($data["legend"])
+			$graph->legend();
 
 		return [
 			"graph" => $graph->output_gd_png_base64(),
 		];
 	}
-	else {
+	elseif (isset($_GET["imgr"])) {
 		$from = $data["plots"];
 		$plots = [];
 
@@ -72,7 +76,8 @@ function gprocess($data) {
 
 		foreach (["title", "xlabel", "ylabel"] as $_ => $key) {
 			$c = $cfg[$key];
-			$data[$key] = $c ? $c : null;
+			if ($c !== null)
+				$data[$key] = $c;
 		}
 
 		return $data;

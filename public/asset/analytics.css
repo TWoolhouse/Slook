@@ -1,0 +1,47 @@
+main,
+form,
+section {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	align-items: center;
+}
+
+section {
+	width: 90%;
+}
+
+section * {
+	width: 100%;
+}
+
+.res,
+.url {
+	border-radius: 1rem;
+	border-style: solid;
+	margin-bottom: 1rem;
+}
+
+.url {
+	font-size: 1.5em;
+	padding: 0.5em;
+}
+
+.res {
+	background-color: white;
+	color: black;
+	min-height: 75vh;
+	padding: 1rem;
+}
+
+img.res {
+	max-height: 99vh;
+	width: auto;
+}
+
+@media (prefers-color-scheme: dark) {
+	.res {
+		background-color: black;
+		color: white;
+	}
+}

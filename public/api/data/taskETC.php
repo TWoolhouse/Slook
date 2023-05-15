@@ -2,29 +2,38 @@
 require_once "api/db.php";
 
 
-function entry_point() {
-    $db = db();
+function entry_point($uid) {
+	$db = db();
 	$user = user();
 
-	$taskID = $_GET['taskID'] ?? NULL;
+	$showUsers = isset($_GET["users"]);
 
-    $result = command($db, "SELECT wokerhours / (SELECT COUNT(user)
-    FROM TaskUser
-	WHERE task = ?) AS 'ETC'
-    FROM Task
+	$result = command($db, "SELECT workerhours / (SELECT COUNT(user)
+	FROM TaskUser
+	WHERE task = ?) AS 'ETC', workerhours
+	FROM Task
 	WHERE uid = ?", [
-		bind(1, $taskID, PDO::PARAM_STR),
-        bind(2, $taskID, PDO::PARAM_STR),
+		bind(1, $uid, PDO::PARAM_INT),
+		bind(2, $uid, PDO::PARAM_INT),
 	])->fetch();
 
-    $temp = command($db, "SELECT COUNT(user) AS 'usersAssigned'
-    FROM TaskUser
-	WHERE task = ?", [
-		bind(1, $taskID, PDO::PARAM_STR),
-	])->fetch();
+	if ($result == false)
+		throw new Err(404, "Task `$uid` does not exist!");
 
-    $result += $temp;
+	$out = [
+		"raw" => $result["workerhours"],
+		"hours" => floatval($result["ETC"]),
+	];
 
-    return $result;
+	if ($showUsers) {
+		$users = command($db, "SELECT user.uid, user.name, user.email
+		FROM TaskUser INNER JOIN User ON TaskUser.user = User.uid
+		WHERE task = ?", [
+			bind(1, $uid, PDO::PARAM_INT),
+		])->fetchAll();
+		$out["users"] = $users == false ? null : $users;
+	}
+
+	return $out;
 }
 ?>
