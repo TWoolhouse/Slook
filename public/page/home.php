@@ -60,8 +60,8 @@ $db = db();
 	</select>
 	<div id="directory">
 		<button id="textchat" href="/msg" disabled>Text Chat</button>
+		<button id="textchat_api" href="/msg/api" disabled>Text Chat API</button>
 		<button id="analytics" href="/analytics" disabled>Data Analytics</button>
-		<!-- <button id="textchat_api" href="/message" disabled>Text Chat API</button> -->
 	</div>
 </body>
 

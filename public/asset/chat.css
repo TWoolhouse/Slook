@@ -203,3 +203,9 @@ header div button {
 	font-size: 1em;
 	padding: 0.3em 0.5em;
 }
+
+#loadmore {
+	margin: 1rem;
+	padding: 1rem;
+	font-size: 1.25rem;
+}

@@ -24,6 +24,7 @@ function entry_point($uid) {
 		bind(1, $uid, PDO::PARAM_INT)
 	])->fetchAll();
 
-	return [...$thread, "users" => $users];
+	$thread["users"] = $users;
+	return $thread;
 }
 ?>

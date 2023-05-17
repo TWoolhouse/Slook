@@ -79,6 +79,7 @@ async function thread_load(uid) {
 			const ui_chat = HTMLasDOM(HTML_chat(msg));
 			ui_chats.append(ui_chat);
 		}
+		load_more()
 		CURSOR = r.length > 0 ? r[0].uid : 0;
 	}
 
@@ -230,6 +231,26 @@ function dialog_add() {
 	return dialog
 }
 
+function load_more() {
+	let ui_btn = HTMLasDOM(HTML_load_more())
+	ui_btn.addEventListener("click", async () => {
+		ui_btn.setAttribute("disabled", null)
+		try {
+			let first = (ui_btn.previousElementSibling ?? { id: null }).id;
+			if (!first) return;
+			let r = await (await fetch(`/chat/${THREAD}/message?cursor=${first.slice(1)}`)).json()
+			for (const msg of r) {
+				const ui_chat = HTMLasDOM(HTML_chat(msg));
+				ui_btn.insertAdjacentElement("beforebegin", ui_chat);
+			}
+		} finally {
+			ui_btn.removeAttribute("disabled")
+		}
+	});
+	let ui_main = document.querySelector("main");
+	ui_main.append(ui_btn)
+}
+
 function HTML_chat(msg) {
 	let owner = MEMBER_LIST.find(u => u.uid === msg.owner);
 	let date = new Date(msg.created).toLocaleDateString(undefined, {
@@ -265,7 +286,7 @@ function HTML_member(user) {
 	return /* HTML */ `
 	<div class="member">
 		<img src="${avatar(user, 32)}" width="32" height="32">
-		<span>${user.email}</span>
+		<span>${user.name ?? user.email}</span>
 	</div>
 	`;
 }
@@ -311,6 +332,10 @@ function HTML_dialog_add() {
 		</form>
 	</dialog>
 	`
+}
+
+function HTML_load_more() {
+	return /* HTML */`<button id="loadmore">Load More</button>`
 }
 
 instansiate_dialog();

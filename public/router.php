@@ -25,5 +25,6 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
 
 	$r->addRoute("GET", "/msg", "page/chat");
 	$r->addRoute("GET", "/analytics", "page/data");
+	$r->addRoute("GET", "/msg/api", "page/chatx");
 });
 ?>

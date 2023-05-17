@@ -13,8 +13,8 @@ function entry_point($uid) {
 	date_default_timezone_set('Europe/London');
 
 	$tasks = command($db, "SELECT Task.uid, Task.name, Task.created, Task.started, Task.completed
-	FROM Task INNER JOIN TaskUser ON Task.uid = TaskUser.task
-	WHERE TaskUser.user = ?
+	FROM Task INNER JOIN ProjectTask ON Task.uid = ProjectTask.task
+	WHERE ProjectTask.project = ?
 	ORDER BY Task.created ASC", [
 		bind(1, $uid, PDO::PARAM_INT)
 	])->fetchAll();

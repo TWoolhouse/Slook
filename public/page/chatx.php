@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<title>Analytics</title>
+	<title>Chat APIs</title>
 	<?php require_once("css"); ?>
 	<style>
 	<?php require_once("asset/analytics.css"); ?>
@@ -16,7 +16,7 @@
 </body>
 
 <script>
-	<?php require_once("asset/analytics.js") ?>
+	<?php require_once("asset/chatx.js") ?>
 </script>
 
 </html>

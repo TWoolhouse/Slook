@@ -75,10 +75,11 @@ ROUTES = [
 	[TR, "/data/3/tasks?imgr"],
 	[TR, "/data/3/tasks"],
 	[TR, "/data/1/leading?projects"],
-	[TR, "/data/1/eta?users"],
-	[TR, "/data/1/count/tasks?projects&tasks"],
-	[TG, "/data/2/count/hours?projects&img"],
-	[TR, "/data/2/count/hours?projects&imgr"],
+	[TR, "/data/8/eta?users"],
+	[TR, "/data/3/productivity"],
+	[TR, "/data/3/count/tasks?projects&tasks"],
+	[TG, "/data/1/count/hours?projects&img"],
+	[TR, "/data/1/count/hours?projects&imgr"],
 ]
 
 let ui_main = document.querySelector("main")
