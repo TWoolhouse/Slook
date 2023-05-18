@@ -33,7 +33,7 @@ A interval-polling API using JSON for all body requests and responses. A cookie 
   - `[$email]` : string _Email of the user._
   - **->** User{ uid, email, name }
 
-- **GET** `/data/:uid/tasks?` -> The currently assigned tasks for a user.
+- **GET** `/data/:uid/tasks?[img]]` -> The currently assigned tasks for a user.
   - `:uid` : User[uid]
   - `[]
 
